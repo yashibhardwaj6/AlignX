@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #172033;
+  background: #eef3f8;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(221, 229, 239, 0.9);
+  box-shadow: 0 16px 48px rgba(23, 32, 51, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.status-completed { @apply bg-green-100 text-green-700 border-green-200; }
+.status-ontrack { @apply bg-yellow-100 text-yellow-700 border-yellow-200; }
+.status-delayed { @apply bg-red-100 text-red-700 border-red-200; }
+.status-notstarted { @apply bg-gray-100 text-gray-700 border-gray-200; }
+
+.progress-stripe {
+  background-image: linear-gradient(45deg, rgba(255,255,255,.25) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.25) 50%, rgba(255,255,255,.25) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+  animation: stripe 1.1s linear infinite;
+}
+
+@keyframes stripe {
+  from { background-position: 1rem 0; }
+  to { background-position: 0 0; }
+}
